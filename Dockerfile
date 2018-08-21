@@ -3,7 +3,10 @@ MAINTAINER Mark Hagemann mark.hagemann@gmail.com
 
 # Install dependencies for bamr
 RUN install2.r --error \
-    settings
+    settings \
+    mvtnorm \
+    truncnorm \
+    magic
 
 RUN R -e "devtools::install_github('markwh/swotr', dependencies = FALSE)"
 RUN R -e "devtools::install_github('markwh/bamr', ref = 'master', local = FALSE, dependencies = FALSE)"    
